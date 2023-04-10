@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const http_1 = require("http");
+const helmet_1 = __importDefault(require("helmet"));
+const dotenv_1 = __importDefault(require("dotenv"));
+const logger_1 = require("./src/middlewares/logger");
+const routers_1 = require("./src/configs/routers");
+dotenv_1.default.config();
+const app = (0, express_1.default)();
+const server = (0, http_1.createServer)(app);
+const port = process.env.PORT || 3000;
+app.use((0, helmet_1.default)());
+app.use(logger_1.logger);
+app.use(express_1.default.json());
+app.use('/', routers_1.router);
+app.get('/index', (request, response) => response.send('index'));
+server.listen(port, () => console.log(`running port: ${port}`));

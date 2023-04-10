@@ -1,0 +1,5 @@
+running port: 8000
+[Wed, 05 Apr 2023 12:52:03 GMT] GET 200 /pages (2.057 ms) Remote IP: ::1 | User-agent: undefined
+[Wed, 05 Apr 2023 12:52:04 GMT] GET 200 /pages (0.423 ms) Remote IP: ::1 | User-agent: undefined
+running port: 8000
+[Wed, 05 Apr 2023 12:59:00 GMT] GET 200 /pages (2.075 ms) Remote IP: ::1 | User-agent: undefined
